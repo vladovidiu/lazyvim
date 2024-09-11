@@ -4,7 +4,7 @@
 local map = LazyVim.safe_keymap_set
 
 local lazyterm = function()
-  LazyVim.terminal(nil, { cwd = LazyVim.root() })
+  LazyVim.terminal(nil, { cwd = LazyVim.root(), border = "rounded" })
 end
 map("n", "<c-\\>", lazyterm, { desc = "Terminal (Root Dir)" })
 map("t", "<C-\\>", "<cmd>close<cr>", { desc = "Hide Terminal" })
