@@ -33,13 +33,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
     { import = "plugins" },
-    {
-      "proxy_key",
-      dir = "../local-plugins/proxy_key",
-      config = function()
-        require("local-plugins.proxy_key").setup()
-      end,
-    },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
