@@ -3,22 +3,13 @@ return {
   event = "VeryLazy",
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
-  opts = {
-    -- add any opts here
-  },
-  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  build = "make",
-  config = function()
-    local openai = require("avante.providers.openai")
-    -- local anthropic = require("avante.providers.anthropic")
-
-    -- Get the hostname
+  opts = function()
     local hostname = io.popen("hostname"):read("*l")
+    local openai = require("avante.providers.openai")
 
-    local config
     if hostname:match("quasar") then
       -- Work configuration
-      config = {
+      return {
         provider = "shopify-ai",
         vendors = {
           ["shopify-ai"] = {
@@ -32,12 +23,15 @@ return {
       }
     else
       -- Personal configuration
-      config = {
+      return {
         provider = "claude",
       }
     end
-
-    require("avante").setup(config)
+  end,
+  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+  build = "make",
+  config = function()
+    require("avante").setup({})
   end,
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
@@ -71,6 +65,14 @@ return {
         file_types = { "markdown", "Avante" },
       },
       ft = { "markdown", "Avante" },
+    },
+    {
+      "proxy_key",
+      dir = "~/.config/LazyNvim/lua/local-plugins",
+      config = function()
+        require("local-plugins.proxy_key").setup()
+      end,
+      event = "VeryLazy",
     },
   },
 }
