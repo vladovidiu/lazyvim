@@ -13,11 +13,10 @@ return {
         provider = "shopify-ai",
         vendors = {
           ["shopify-ai"] = {
+            __inherited_from = "openai",
             endpoint = "https://proxy.shopify.ai/v3/v1",
             model = "anthropic:claude-3-5-sonnet",
             api_key_name = "cmd:openai_key cat",
-            parse_curl_args = openai.parse_curl_args,
-            parse_response_data = openai.parse_response,
           },
         },
       }
@@ -65,14 +64,6 @@ return {
         file_types = { "markdown", "Avante" },
       },
       ft = { "markdown", "Avante" },
-    },
-    {
-      "proxy_key",
-      dir = "~/.config/LazyNvim/lua/local-plugins",
-      config = function()
-        require("local-plugins.proxy_key").setup()
-      end,
-      event = "VeryLazy",
     },
   },
 }
