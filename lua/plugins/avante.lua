@@ -14,23 +14,31 @@ return {
         vendors = {
           ["shopify-ai"] = {
             __inherited_from = "openai",
+            api_key_name = "cmd:openai_key cat",
             endpoint = "https://proxy.shopify.ai/v3/v1",
             model = "anthropic:claude-3-5-sonnet",
-            api_key_name = "cmd:openai_key cat",
           },
         },
       }
     else
       -- Personal configuration
       return {
-        provider = "claude",
+        provider = "ollama",
+        vendors = {
+          ollama = {
+            __inherited_from = "openai",
+            api_key_name = "",
+            endpoint = "http://127.0.0.1:11434/v1",
+            model = "qwq",
+          },
+        },
       }
     end
   end,
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",
-  config = function()
-    require("avante").setup({})
+  config = function(_, opts)
+    require("avante").setup(opts)
   end,
   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
   dependencies = {
