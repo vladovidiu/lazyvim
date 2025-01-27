@@ -23,13 +23,19 @@ return {
     else
       -- Personal configuration
       return {
-        provider = "ollama",
+        provider = "openrouter",
         vendors = {
           ollama = {
             __inherited_from = "openai",
             api_key_name = "",
             endpoint = "http://127.0.0.1:11434/v1",
             model = "qwq",
+          },
+          openrouter = {
+            __inherited_from = "openai",
+            endpoint = "https://openrouter.ai/api/v1",
+            api_key_name = "OPENROUTER_API_KEY",
+            model = "deepseek/deepseek-r1",
           },
         },
       }
