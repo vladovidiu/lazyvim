@@ -11,4 +11,4 @@ opt.guicursor = ""
 opt.undodir = vim.fn.stdpath("cache") .. "/undodir"
 
 -- Disable all snacks animations
-vim.g.snacks_animate = false
+-- vim.g.snacks_animate = false

@@ -16,6 +16,7 @@ return {
             api_key_name = "cmd:openai_key cat",
             endpoint = "https://proxy.shopify.ai/v3/v1",
             model = "anthropic:claude-3-5-sonnet-20241022",
+            -- model = "deepseek:r1",
           },
         },
       }
