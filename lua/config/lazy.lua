@@ -40,6 +40,9 @@ require("lazy").setup({
     -- editor plugins
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
 
+    -- util plugins
+    { import = "lazyvim.plugins.extras.util.dot" },
+
     -- ui plugins
     { import = "lazyvim.plugins.extras.ui.smear-cursor" },
 
