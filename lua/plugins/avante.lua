@@ -9,13 +9,16 @@ return {
     if hostname:match("quasar") then
       -- Work configuration
       return {
+        web_search_engine = {
+          provider = "kagi",
+        },
         provider = "shopify-ai",
         vendors = {
           ["shopify-ai"] = {
             __inherited_from = "openai",
             api_key_name = "cmd:openai_key cat",
-            endpoint = "https://proxy.shopify.ai/v3/v1",
-            model = "anthropic:claude-3-5-sonnet-20241022",
+            endpoint = "https://proxy.shopify.ai/v1",
+            model = "anthropic:claude-3-5-sonnet-v2@20241022",
             -- model = "deepseek:r1",
           },
         },
