@@ -33,6 +33,9 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.git" },
 
+    -- coding plugins
+    { import = "lazyvim.plugins.extras.coding.blink" },
+
     -- linting/formating plugins
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },

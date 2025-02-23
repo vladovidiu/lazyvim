@@ -2,16 +2,20 @@ return {
   {
     "saghen/blink.cmp",
     dependencies = {
-      {
-        "saghen/blink.compat",
-      },
+      "Kaiser-Yang/blink-cmp-avante",
     },
     opts = {
       sources = {
-        compat = {
-          "avante_commands",
-          "avante_mentions",
-          "avante_files",
+        -- Add 'avante' to the list
+        default = { "avante", "lsp", "path", "snippets", "buffer" },
+        providers = {
+          avante = {
+            module = "blink-cmp-avante",
+            name = "Avante",
+            opts = {
+              -- options for blink-cmp-avante
+            },
+          },
         },
       },
     },
