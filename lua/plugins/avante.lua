@@ -18,7 +18,7 @@ return {
             __inherited_from = "openai",
             api_key_name = "cmd:openai_key cat",
             endpoint = "https://proxy.shopify.ai/v1",
-            model = "anthropic:claude-3-5-sonnet-v2@20241022",
+            model = "anthropic:claude-3-7-sonnet",
             -- model = "deepseek:r1",
           },
         },
