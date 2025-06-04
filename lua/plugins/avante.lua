@@ -13,12 +13,12 @@ return {
           provider = "kagi",
         },
         provider = "shopify-ai",
-        vendors = {
+        providers = {
           ["shopify-ai"] = {
             __inherited_from = "openai",
             api_key_name = "cmd:openai_key cat",
             endpoint = "https://proxy.shopify.ai/v1",
-            model = "anthropic:claude-3-7-sonnet",
+            model = "anthropic:claude-sonnet-4",
             -- model = "deepseek:r1",
           },
         },
@@ -27,7 +27,7 @@ return {
       -- Personal configuration
       return {
         provider = "openrouter",
-        vendors = {
+        providers = {
           ollama = {
             __inherited_from = "openai",
             api_key_name = "",
@@ -38,7 +38,7 @@ return {
             __inherited_from = "openai",
             endpoint = "https://openrouter.ai/api/v1",
             api_key_name = "OPENROUTER_API_KEY",
-            model = "anthropic/claude-3.5-sonnet",
+            model = "anthropic/claude-sonnet-4",
           },
         },
       }
