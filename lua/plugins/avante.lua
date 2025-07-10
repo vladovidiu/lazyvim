@@ -16,8 +16,8 @@ return {
         providers = {
           ["shopify-ai"] = {
             __inherited_from = "openai",
-            api_key_name = "cmd:openai_key cat",
-            endpoint = "https://proxy.shopify.ai/v1",
+            -- api_key_name = "cmd:openai_key cat",
+            endpoint = "https://proxy-shopify-ai.local.shop.dev/v1",
             model = "anthropic:claude-sonnet-4",
             -- model = "deepseek:r1",
           },
